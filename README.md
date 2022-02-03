@@ -1,6 +1,6 @@
 # Project
 
-Project contains of server part and client part.
+Project contains of [server part](https://github.com/kiarro/Crossplatform_Server) and [client part](https://github.com/kiarro/Crossplatform_Client).
 
 ## Info
 
