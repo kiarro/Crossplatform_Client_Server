@@ -6,6 +6,14 @@ Project contains of [server part](https://github.com/kiarro/Crossplatform_Server
 
 Server execute python code with parameters and returns result to client.
 
+Sevrer executable might be created with command
+
+``` cmd
+dotnet publish -c Release -o Release -p:PublishSingleFile=true -p:PublishTrimmed=true -r win-x64
+```
+
+or other `dotnet publish` commands.
+
 ## Connection and Interactions
 
 Server and client use tcp sockets to connect
@@ -49,3 +57,14 @@ where `error` is error message, `result` is text result, `axe1` is horizontal ax
 ## Python scripts
 
 Python scripts for server should return info about script when run with argument `info` and json string (as server to client message) when run with argument `eval`. Script results should be printed to standert output stream.
+
+## Launch server
+
+Server might be launched with options:
+
+``` text
+      --ip                   ip address for server
+  -f                         path to directory with python scripts
+  -p                         path to python interpreter;
+  -h, --help                 show this message and exit
+```

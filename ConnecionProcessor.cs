@@ -86,9 +86,13 @@ namespace SocketTcpServer {
         public static string pathPython = "I:\\Python\\python.exe";
 
         public ResponseData SearchForFunctions() {
-            string[] files = Directory.GetFiles(pathToProc, "*");
-            files = new List<string>(files).Select(f => f.Substring(f.LastIndexOf('/') + 1)).ToArray();
-            return new ResponseData("", JsonSerializer.Serialize(files), "", "", null);
+            try{
+                string[] files = Directory.GetFiles(pathToProc, "*");
+                files = new List<string>(files).Select(f => f.Substring(f.LastIndexOf('/') + 1)).ToArray();
+                return new ResponseData("", JsonSerializer.Serialize(files), "", "", null);
+            } catch (Exception e) {
+                return new ResponseData(e.Message, "", "", "", null);
+            }
         }
 
         /// <summary>
